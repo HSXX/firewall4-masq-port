@@ -125,7 +125,7 @@ Test various address selection rules in redirect rules.
 			"name": "Redirect test #9",
 			"family": "ipv4",
 			"src": "wan",
-			"proto": 'tcp' 'udp',
+			"proto": "tcp udp",
 			"snat_port": "61000-62900",
 			"target": "MASQUERADE"
 		}
