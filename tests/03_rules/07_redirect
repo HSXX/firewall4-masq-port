@@ -119,7 +119,9 @@ Test various address selection rules in redirect rules.
 			"src_dport": "27",
 			"dest_port": "27",
 			"target": "dnat"
-		},
+		}
+	],
+	"nat": [
 		{
 			".description": "Ensure that masq to specific port or port range rules work properly",
 			"name": "Redirect test #9",
