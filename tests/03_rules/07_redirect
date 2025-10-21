@@ -119,6 +119,15 @@ Test various address selection rules in redirect rules.
 			"src_dport": "27",
 			"dest_port": "27",
 			"target": "dnat"
+		},
+		{
+			".description": "Ensure that masq to specific port or port range rules work properly",
+			"name": "Redirect test #9",
+			"family": "ipv4",
+			"src": "wan",
+			"proto": 'tcp' 'udp',
+			"snat_port": "61000-62900",
+			"target": "MASQUERADE"
 		}
 	]
 }
