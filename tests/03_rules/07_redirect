@@ -124,7 +124,7 @@ Test various address selection rules in redirect rules.
 	"nat": [
 		{
 			".description": "Ensure that masq to specific port or port range rules work properly",
-			"name": "Redirect test #9",
+			"name": "masq snat test #1",
 			"family": "ipv4",
 			"src": "wan",
 			"proto": "tcp udp",
@@ -309,6 +309,8 @@ table inet fw4 {
 	}
 
 	chain srcnat_wan {
+		meta nfproto ipv4 meta l4proto tcp counter masquerade to :61000-62900 comment "!fw4: masq snat test #1"
+		meta nfproto ipv4 meta l4proto udp counter masquerade to :61000-62900 comment "!fw4: masq snat test #1"
 		meta nfproto ipv4 masquerade comment "!fw4: Masquerade IPv4 wan traffic"
 		meta nfproto ipv6 masquerade comment "!fw4: Masquerade IPv6 wan traffic"
 	}
